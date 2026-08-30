@@ -24,8 +24,12 @@ class Library:
         print("---------------------------\n")
 
     def borrow_book(self, title):
-        pass
-    
+        for book in self.books:
+            if title == book.title:
+                book.is_borrowed = True
+                return True
+        return False
+
 
 if __name__ == "__main__":
     my_library = Library("City Central Library")
